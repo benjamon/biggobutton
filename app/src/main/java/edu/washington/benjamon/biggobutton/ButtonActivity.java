@@ -10,6 +10,8 @@ import android.widget.Button;
 
 public class ButtonActivity extends ActionBarActivity {
 
+    private int clicks = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,7 +21,8 @@ public class ButtonActivity extends ActionBarActivity {
         button.setOnClickListener(
                 new Button.OnClickListener() {
                       public void onClick(View v) {
-                          button.setText("You have pushed me 1 times!");
+                          clicks += 1;
+                          button.setText("You have pushed me " + clicks + " times!");
                       }
                 }
         );
